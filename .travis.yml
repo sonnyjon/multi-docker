@@ -13,7 +13,7 @@ after_success:
   - docker build -t sonnyjon/multi-nginx ./nginx
   - docker build -t sonnyjon/multi-server ./server
   - docker build -t sonnyjon/multi-worker ./worker
-  # Log in to the Docker CLI
+  # Log in to the Docker CLI. NOTE: Docker, not Travis CI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push sonnyjon/multi-client
